@@ -9,4 +9,6 @@ public class GetResponseModel {
     boolean depositpaid;
     Object bookingdates;
 
+    //TO DO переделать по аналогии с созданием, вынести даты в отдельный оьъект
+
 }

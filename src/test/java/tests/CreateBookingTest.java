@@ -1,6 +1,6 @@
 package tests;
 
-import models.createbooking.BookingDatesModel;
+import models.datesmodel.BookingDatesModel;
 import models.createbooking.CreateBodyRequestModel;
 import models.createbooking.CreateResponseModel;
 import org.junit.jupiter.api.DisplayName;

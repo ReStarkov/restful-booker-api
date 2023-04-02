@@ -1,6 +1,7 @@
 package models.createbooking;
 
 import lombok.Data;
+import models.datesmodel.BookingDatesModel;
 
 @Data
 public class CreateBodyRequestModel {

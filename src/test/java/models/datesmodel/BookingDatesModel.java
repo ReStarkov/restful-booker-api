@@ -1,4 +1,4 @@
-package models.createbooking;
+package models.datesmodel;
 
 import lombok.Data;
 

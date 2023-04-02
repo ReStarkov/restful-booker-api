@@ -1,7 +1,7 @@
 package tests;
 
 import io.qameta.allure.Step;
-import models.createbooking.BookingDatesModel;
+import models.datesmodel.BookingDatesModel;
 import models.createbooking.CreateBodyRequestModel;
 import models.createbooking.CreateResponseModel;
 
