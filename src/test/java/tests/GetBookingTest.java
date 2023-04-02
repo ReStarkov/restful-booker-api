@@ -1,11 +1,8 @@
 package tests;
 
-import io.qameta.allure.Step;
 import jdk.jfr.Description;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.certificate;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static specs.BaseSpec.requestSpec;
