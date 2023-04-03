@@ -24,6 +24,7 @@ public class UpdateBookingTest extends TestBase {
 
         bookingDates.setCheckin(checkIn);
         bookingDates.setCheckout(checkOut);
+
         requestUpdate.setFirstname(firstName);
         requestUpdate.setLastname(lastName);
         requestUpdate.setTotalprice(totalPrice);
