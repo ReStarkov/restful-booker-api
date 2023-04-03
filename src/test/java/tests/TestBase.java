@@ -48,19 +48,4 @@ public class TestBase {
 
         return response.getBookingid();
     }
-
-    @Step("Получение информации по бронированию по bookingId")
-    public GetResponseModel getBookingInfo(int id) {
-
-        GetResponseModel response = step("Отправка запроса на получение данных о пользователе",
-                () -> given(requestSpec)
-                        .when()
-                        .get("booking/" + id)
-                        .then()
-                        .spec(responseSpec)
-                        .statusCode(200)
-                        .extract().as(GetResponseModel.class));
-
-        return response;
-    }
 }
