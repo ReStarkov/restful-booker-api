@@ -18,7 +18,7 @@ public class GetBookingTest extends TestBase {
 
         int id = createBooking();
 
-        GetResponseModel response = step("Отправка запроса на получение данных о пользователе",
+        GetResponseModel response = step("Отправка запроса на получение данных о бронировании",
                 () -> given(requestSpec)
                         .when()
                         .get("booking/" + id)
@@ -49,5 +49,18 @@ public class GetBookingTest extends TestBase {
                 " бронирования", () ->
                 assertThat(response.getBookingdates().getCheckout().equals("2023-04-17")));
 
+    }
+
+    @Test
+    @Description("Получение информацию по не существующему бронированию. В ответе ожидается код ошибки 404")
+    public void getNotExistingBookingTest() {
+
+        step("Отправка запроса на получение данных о бронировании и проверка результата",
+                () -> given(requestSpec)
+                        .when()
+                        .get("booking/" + 0)
+                        .then()
+                        .spec(responseSpec)
+                        .statusCode(404));
     }
 }

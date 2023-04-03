@@ -9,7 +9,6 @@ public class GetResponseModel {
     int totalprice;
     boolean depositpaid;
     BookingDatesModel bookingdates;
-
     public boolean isDepositpaid() {
         return depositpaid;
     }
