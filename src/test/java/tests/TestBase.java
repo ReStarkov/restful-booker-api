@@ -17,9 +17,9 @@ public class TestBase {
     BookingDatesModel bookingDates = new BookingDatesModel();
     CreateBodyRequestModel requestCreate = new CreateBodyRequestModel();
     UpdateBodyRequestModel requestUpdate = new UpdateBodyRequestModel();
-    String firstname;
-    String additionalneed;
-    String lastname;
+    String firstName;
+    String additionalNeed;
+    String lastName;
     String checkIn;
     String checkOut;
     int totalPrice;

@@ -27,7 +27,7 @@ public class GetBookingTest extends TestBase {
                         .statusCode(200)
                         .extract().as(GetResponseModel.class));
 
-        step("Проверка значения поля firstname полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля firstName полученного в ответе. Значение соответствует переданному в запросе" +
                 " на создание бронирования", () ->
                 assertThat(response.getFirstname().equals("defaultName")));
         step("Проверка значения поля lastname полученного в ответе. Значение соответствует переданному в запросе" +

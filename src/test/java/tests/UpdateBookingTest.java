@@ -15,8 +15,8 @@ public class UpdateBookingTest extends TestBase {
 
     public UpdateBodyRequestModel requestUpdate() {
 
-        firstname = "NewMan";
-        lastname = "NewFamily";
+        firstName = "NewMan";
+        lastName = "NewFamily";
         checkIn = "2025-05-05";
         checkOut = "2026-07-11";
         totalPrice = 99;
@@ -24,8 +24,8 @@ public class UpdateBookingTest extends TestBase {
 
         bookingDates.setCheckin(checkIn);
         bookingDates.setCheckout(checkOut);
-        requestUpdate.setFirstname(firstname);
-        requestUpdate.setLastname(lastname);
+        requestUpdate.setFirstname(firstName);
+        requestUpdate.setLastname(lastName);
         requestUpdate.setTotalprice(totalPrice);
         requestUpdate.setDepositpaid(depositPaid);
         requestUpdate.setBookingdates(bookingDates);
@@ -52,13 +52,13 @@ public class UpdateBookingTest extends TestBase {
                         .statusCode(200)
                         .extract().as(UpdateResponseModel.class));
 
-        step("Проверка значения поля firstname полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля firstName полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
-                assertThat(response.getFirstname()).isEqualTo(firstname));
+                assertThat(response.getFirstname()).isEqualTo(firstName));
 
         step("Проверка значения поля lastname полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
-                assertThat(response.getLastname()).isEqualTo(lastname));
+                assertThat(response.getLastname()).isEqualTo(lastName));
 
         step("Проверка значения поля totalPrice полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
@@ -98,13 +98,13 @@ public class UpdateBookingTest extends TestBase {
                         .statusCode(200)
                         .extract().as(UpdateResponseModel.class));
 
-        step("Проверка значения поля firstname полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля firstName полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
-                assertThat(response.getFirstname()).isEqualTo(firstname));
+                assertThat(response.getFirstname()).isEqualTo(firstName));
 
         step("Проверка значения поля lastname полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
-                assertThat(response.getLastname()).isEqualTo(lastname));
+                assertThat(response.getLastname()).isEqualTo(lastName));
 
         step("Проверка значения поля additionalneeds полученного в ответе. Значение поля не изменилось и осталось" +
                 "с тем же значением, что и при создании бронирования", () ->

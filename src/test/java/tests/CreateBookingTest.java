@@ -20,23 +20,23 @@ public class CreateBookingTest extends TestBase {
 
     public CreateBodyRequestModel createData() {
 
-        firstname = "QA";
-        lastname = "GURU";
+        firstName = "QA";
+        lastName = "GURU";
         checkIn = "2023-01-01";
         checkOut = "2023-04-17";
         totalPrice = 17;
         depositPaid = true;
-        additionalneed = "Breakfast";
+        additionalNeed = "Breakfast";
 
         bookingDates.setCheckin(checkIn);
         bookingDates.setCheckout(checkOut);
 
-        requestCreate.setFirstname(firstname);
-        requestCreate.setLastname(lastname);
+        requestCreate.setFirstname(firstName);
+        requestCreate.setLastname(lastName);
         requestCreate.setTotalprice(totalPrice);
         requestCreate.setDepositpaid(depositPaid);
         requestCreate.setBookingdates(bookingDates);
-        requestCreate.setAdditionalneeds(additionalneed);
+        requestCreate.setAdditionalneeds(additionalNeed);
 
         return requestCreate;
     }
@@ -58,13 +58,13 @@ public class CreateBookingTest extends TestBase {
                         .extract().as(CreateResponseModel.class));
 
         step("Проверка значения поля BookingId полученного в ответе. Поле не null, а также больше чем '0'", () ->
-                assertThat(response.getBookingid()).isNotNull().isGreaterThan(0));
+                assertThat(response.getBookingid()).isGreaterThan(0));
 
         step("Проверка объекта 'booking' который возвращается в ответе. Поля содержат данные переданные в " +
                 " запросе на создание бронирования", () ->
                 assertThat(response.getBooking())
-                        .hasFieldOrPropertyWithValue("firstname", firstname)
-                        .hasFieldOrPropertyWithValue("lastname", lastname)
+                        .hasFieldOrPropertyWithValue("firstname", firstName)
+                        .hasFieldOrPropertyWithValue("lastname", lastName)
                         .hasFieldOrProperty("bookingdates")
                         .hasFieldOrPropertyWithValue("totalprice", totalPrice)
                         .hasFieldOrPropertyWithValue("depositpaid", depositPaid)
@@ -96,7 +96,7 @@ public class CreateBookingTest extends TestBase {
                         .extract().as(CreateResponseModel.class));
 
         step("Проверка значения поля BookingId полученного в ответе. Поле не null, а также больше чем '0'", () ->
-                assertThat(response.getBookingid()).isNotNull().isGreaterThan(0));
+                assertThat(response.getBookingid()).isGreaterThan(0));
 
         step("В ответе отсутствует опциональное поле 'additionalneed'", () ->
                 assertThat(response.getBooking().getAdditionalneeds()).isNull());
@@ -104,7 +104,7 @@ public class CreateBookingTest extends TestBase {
 
 
     static Stream<String> optionalFieldsProvider() {
-        return Stream.of("lastname", "firstname", "totalprice", "depositpaid", "bookingdates");
+        return Stream.of("lastName", "firstName", "totalPrice", "depositPaid", "bookingDates");
     }
 
     @ParameterizedTest
@@ -116,19 +116,19 @@ public class CreateBookingTest extends TestBase {
         requestCreate = createData();
 
         switch (fieldName) {
-            case "lastname":
+            case "lastName":
                 requestCreate.setNullLastName();
                 break;
-            case "firstname":
+            case "firstName":
                 requestCreate.setNullFirstName();
                 break;
-            case "totalprice":
+            case "totalPrice":
                 requestCreate.setNullTotalPrice();
                 break;
-            case "depositpaid":
+            case "depositPaid":
                 requestCreate.setNullDepositPaid();
                 break;
-            case "bookingdates":
+            case "bookingDates":
                 requestCreate.setNullBookingdates();
                 break;
             default:
