@@ -1,7 +1,7 @@
 package tests;
 
-import jdk.jfr.Description;
 import models.getbooking.GetResponseModel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -13,7 +13,7 @@ import static specs.BaseSpec.responseSpec;
 public class GetBookingTest extends TestBase {
 
     @Test
-    @Description("Получение информацию по существующему бронированию")
+    @DisplayName("Получение информацию по существующему бронированию")
     public void getExistingBookingTest() {
 
         int id = createBooking();
@@ -52,7 +52,7 @@ public class GetBookingTest extends TestBase {
     }
 
     @Test
-    @Description("Получение информацию по не существующему бронированию. В ответе ожидается код ошибки 404")
+    @DisplayName("Получение информацию по не существующему бронированию. В ответе ожидается код ошибки 404")
     public void getNotExistingBookingTest() {
 
         step("Отправка запроса на получение данных о бронировании и проверка результата",
