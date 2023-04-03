@@ -56,7 +56,7 @@ public class UpdateBookingTest extends TestBase {
                 " на обновление бронирования", () ->
                 assertThat(response.getFirstname()).isEqualTo(firstName));
 
-        step("Проверка значения поля lastname полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля lastName полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
                 assertThat(response.getLastname()).isEqualTo(lastName));
 
@@ -102,7 +102,7 @@ public class UpdateBookingTest extends TestBase {
                 " на обновление бронирования", () ->
                 assertThat(response.getFirstname()).isEqualTo(firstName));
 
-        step("Проверка значения поля lastname полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля lastName полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
                 assertThat(response.getLastname()).isEqualTo(lastName));
 

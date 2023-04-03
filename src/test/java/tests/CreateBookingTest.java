@@ -79,7 +79,7 @@ public class CreateBookingTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Создание бронирования с обязательными полями и без опциональеного поля 'additionalneed'")
+    @DisplayName("Создание бронирования с обязательными полями и без опционального поля 'additionalNeed'")
     public void createBookingRequiredTest() {
 
         requestCreate = createData();
@@ -98,7 +98,7 @@ public class CreateBookingTest extends TestBase {
         step("Проверка значения поля BookingId полученного в ответе. Поле не null, а также больше чем '0'", () ->
                 assertThat(response.getBookingid()).isGreaterThan(0));
 
-        step("В ответе отсутствует опциональное поле 'additionalneed'", () ->
+        step("В ответе отсутствует опциональное поле 'additionalNeed'", () ->
                 assertThat(response.getBooking().getAdditionalneeds()).isNull());
     }
 
