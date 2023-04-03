@@ -111,4 +111,21 @@ public class UpdateBookingTest extends TestBase {
                 assertThat(response.getAdditionalneeds()).isEqualTo("Breakfast"));
 
     }
+
+    @Test
+    @DisplayName("Обновление несуществующего бронирования. В ответе ожидается код ошибки 405 согласно реализации сервиса")
+    public void updateNotExistingBookingTest() {
+
+        requestUpdate = requestUpdate();
+
+        step("Отправка запроса на обновление данных о бронировании и проверка результата",
+                () -> given()
+                        .spec(requestSpec)
+                        .body(requestUpdate)
+                        .when()
+                        .put("booking/" + 0)
+                        .then()
+                        .spec(responseSpec)
+                        .statusCode(405));
+    }
 }
