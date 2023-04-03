@@ -110,6 +110,7 @@ public class CreateBookingTest extends TestBase {
     @DisplayName("Создание бронирования без обязательного поля. В ответе ожидается ответ код 500 согласно " +
             " реализации сервиса")
     public void testCreateBookingWithoutOptionalFields(String fieldName) {
+
         requestCreate = createData();
 
         switch (fieldName) {
