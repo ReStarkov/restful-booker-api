@@ -111,5 +111,4 @@ public class UpdateBookingTest extends TestBase {
                 assertThat(response.getAdditionalneeds()).isEqualTo("Breakfast"));
 
     }
-
 }

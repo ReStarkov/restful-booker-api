@@ -6,7 +6,6 @@ import models.createbooking.CreateBodyRequestModel;
 import models.createbooking.CreateResponseModel;
 import models.getbooking.GetResponseModel;
 import models.updatebooking.UpdateBodyRequestModel;
-import models.updatebooking.UpdateResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -64,5 +63,4 @@ public class TestBase {
 
         return response;
     }
-
 }

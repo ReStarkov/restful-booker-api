@@ -144,5 +144,4 @@ public class CreateBookingTest extends TestBase {
                 .spec(responseSpec)
                 .statusCode(500);
     }
-
 }
