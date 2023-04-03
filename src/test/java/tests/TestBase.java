@@ -5,6 +5,8 @@ import models.datesmodel.BookingDatesModel;
 import models.createbooking.CreateBodyRequestModel;
 import models.createbooking.CreateResponseModel;
 import models.getbooking.GetResponseModel;
+import models.updatebooking.UpdateBodyRequestModel;
+import models.updatebooking.UpdateResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -15,6 +17,7 @@ public class TestBase {
 
     BookingDatesModel bookingDates = new BookingDatesModel();
     CreateBodyRequestModel requestCreate = new CreateBodyRequestModel();
+    UpdateBodyRequestModel requestUpdate = new UpdateBodyRequestModel();
     String firstname;
     String additionalneed;
     String lastname;

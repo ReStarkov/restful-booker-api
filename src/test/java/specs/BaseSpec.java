@@ -18,6 +18,7 @@ public class BaseSpec {
             .log().headers()
             .log().body()
             .contentType(JSON)
+            .header("Authorization", "Basic YWRtaW46cGFzc3dvcmQxMjM=")
             .baseUri("https://restful-booker.herokuapp.com");
 
 

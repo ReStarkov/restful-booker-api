@@ -18,27 +18,27 @@ public class CreateBodyRequestModel {
         this.totalprice = 20;
         this.depositpaid = true;
     }
-    public void removeLastName() {
+    public void setNullLastName() {
         this.lastname = null;
     }
 
-    public void removeFirstName() {
+    public void setNullFirstName() {
         this.firstname = null;
     }
 
-    public void removeTotalPrice() {
+    public void setNullTotalPrice() {
         this.totalprice = null;
     }
 
-    public void removeDepositPaid() {
+    public void setNullDepositPaid() {
         this.depositpaid = null;
     }
 
-    public void removeAdditionalNeeds() {
+    public void setNullAdditionalNeeds() {
         this.additionalneeds = null;
     }
 
-    public void removeBookingdates() {
+    public void setNullBookingdates() {
         this.bookingdates = null;
     }
 

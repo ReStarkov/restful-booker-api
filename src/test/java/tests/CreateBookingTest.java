@@ -46,15 +46,16 @@ public class CreateBookingTest extends TestBase {
     public void createBookingAllFieldsTest() {
 
         requestCreate = createData();
-        CreateResponseModel response = given()
-                .spec(requestSpec)
-                .body(requestCreate)
-                .when()
-                .post("/booking")
-                .then()
-                .spec(responseSpec)
-                .statusCode(200)
-                .extract().as(CreateResponseModel.class);
+        CreateResponseModel response = step("Отправка запроса на создание бронирования",
+                () -> given()
+                        .spec(requestSpec)
+                        .body(requestCreate)
+                        .when()
+                        .post("/booking")
+                        .then()
+                        .spec(responseSpec)
+                        .statusCode(200)
+                        .extract().as(CreateResponseModel.class));
 
         step("Проверка значения поля BookingId полученного в ответе. Поле не null, а также больше чем '0'", () ->
                 assertThat(response.getBookingid()).isNotNull().isGreaterThan(0));
@@ -82,16 +83,17 @@ public class CreateBookingTest extends TestBase {
     public void createBookingRequiredTest() {
 
         requestCreate = createData();
-        requestCreate.removeAdditionalNeeds();
-        CreateResponseModel response = given()
-                .spec(requestSpec)
-                .body(requestCreate)
-                .when()
-                .post("/booking")
-                .then()
-                .spec(responseSpec)
-                .statusCode(200)
-                .extract().as(CreateResponseModel.class);
+        requestCreate.setNullAdditionalNeeds();
+        CreateResponseModel response = step("Отправка запроса на создание бронирования",
+                () -> given()
+                        .spec(requestSpec)
+                        .body(requestCreate)
+                        .when()
+                        .post("/booking")
+                        .then()
+                        .spec(responseSpec)
+                        .statusCode(200)
+                        .extract().as(CreateResponseModel.class));
 
         step("Проверка значения поля BookingId полученного в ответе. Поле не null, а также больше чем '0'", () ->
                 assertThat(response.getBookingid()).isNotNull().isGreaterThan(0));
@@ -107,27 +109,27 @@ public class CreateBookingTest extends TestBase {
 
     @ParameterizedTest
     @MethodSource("optionalFieldsProvider")
-    @DisplayName("Создание бронирования без обязательного поля. В ответе ожидается ответ код 500 согласно " +
-            " реализации сервиса")
+    @DisplayName("Создание бронирования со значением 'null' в обязательных полях. В ответе " +
+            " ожидается ответ код 500 согласно реализации сервиса")
     public void testCreateBookingWithoutOptionalFields(String fieldName) {
 
         requestCreate = createData();
 
         switch (fieldName) {
             case "lastname":
-                requestCreate.removeLastName();
+                requestCreate.setNullLastName();
                 break;
             case "firstname":
-                requestCreate.removeFirstName();
+                requestCreate.setNullFirstName();
                 break;
             case "totalprice":
-                requestCreate.removeTotalPrice();
+                requestCreate.setNullTotalPrice();
                 break;
             case "depositpaid":
-                requestCreate.removeDepositPaid();
+                requestCreate.setNullDepositPaid();
                 break;
             case "bookingdates":
-                requestCreate.removeBookingdates();
+                requestCreate.setNullBookingdates();
                 break;
             default:
                 throw new IllegalArgumentException("Invalid field name: " + fieldName);
