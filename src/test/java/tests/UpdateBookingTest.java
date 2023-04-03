@@ -64,10 +64,10 @@ public class UpdateBookingTest extends TestBase {
                 " на обновление бронирования", () ->
                 assertThat(response.getTotalprice()).isEqualTo(99));
 
-        step("Проверка значения поля depositpaid полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля depositPaid полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
                 assertThat(response.isDepositpaid()).isFalse());
-        step("Проверка значения поля additionalneeds полученного в ответе. Значение соответствует переданному в запросе" +
+        step("Проверка значения поля additionalNeeds полученного в ответе. Значение соответствует переданному в запросе" +
                 " на обновление бронирования", () ->
                 assertThat(response.getAdditionalneeds()).isEqualTo("Sport"));
         step("Проверка дат бронирования. Дата начала соответствуют значению переданному в запросе на обновление " +
@@ -80,7 +80,7 @@ public class UpdateBookingTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Обновление бронирования с обязательными полями, без опционального поля 'additionalneeds'")
+    @DisplayName("Обновление бронирования с обязательными полями, без опционального поля 'additionalNeeds'")
     public void updateBookingRequiredFieldsTest() {
 
         int id = createBooking();
@@ -106,7 +106,7 @@ public class UpdateBookingTest extends TestBase {
                 " на обновление бронирования", () ->
                 assertThat(response.getLastname()).isEqualTo(lastName));
 
-        step("Проверка значения поля additionalneeds полученного в ответе. Значение поля не изменилось и осталось" +
+        step("Проверка значения поля additionalNeeds полученного в ответе. Значение поля не изменилось и осталось" +
                 "с тем же значением, что и при создании бронирования", () ->
                 assertThat(response.getAdditionalneeds()).isEqualTo("Breakfast"));
 
