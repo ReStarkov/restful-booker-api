@@ -1,0 +1,14 @@
+Telegram name: @starkQaBot
+Telegram token: 6032852301:AAH8tp-bgKktlG5N-imu8x4E9nvWY5J6c1c
+ChatId:210051919
+
+
+Fetch bot updates and look for the chat id:
+curl https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getUpdates | jq .message.chat.id
+curl https://api.telegram.org/bot6032852301:AAH8tp-bgKktlG5N-imu8x4E9nvWY5J6c1c/getUpdates
+
+
+Send a message using the HTTP API: https://core.telegram.org/bots/api#sendmessage
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "210051919", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/bot6032852301:AAH8tp-bgKktlG5N-imu8x4E9nvWY5J6c1c/sendMessage
+
+java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar

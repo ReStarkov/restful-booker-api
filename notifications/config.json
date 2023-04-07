@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "restful-booker",
+    "environment": "qa.guru",
+    "comment": "tests for restful-booker",
+    "reportLink": "https://jenkins.autotests.cloud",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6120920737:AAHBk63wUCfOWqqg8NMvnlbjESHIjOAlgqc",
+    "chat": "210051919",
+    "replyTo": ""
+  }
+}
