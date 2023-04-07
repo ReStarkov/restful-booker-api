@@ -6,7 +6,7 @@
     "comment": "test for restful-booker",
     "reportLink": "https://jenkins.autotests.cloud",
     "language": "en",
-    "allureFolder": "build/reports/allure-report/allureReport",
+    "allureFolder":  "build/reports/allure-report/allureReport",
     "enableChart": true
   },
   "telegram": {
