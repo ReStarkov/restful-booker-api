@@ -46,7 +46,7 @@ gradle clean test
 allure serve build/allure-results
 ```
 
-###  :round_pushpin:  Удаленный запуск (в Jenkins):
+###  :rocket:  Удаленный запуск (в Jenkins):
 1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/restful-booker-api///">проект</a>
 
 ![This is an image](/images/screens/jenkins.jpg)
