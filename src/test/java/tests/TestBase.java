@@ -4,10 +4,8 @@ import io.qameta.allure.Step;
 import models.datesmodel.BookingDatesModel;
 import models.createbooking.CreateBodyRequestModel;
 import models.createbooking.CreateResponseModel;
-import models.getbooking.GetResponseModel;
 import models.updatebooking.UpdateBodyRequestModel;
 
-import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static specs.BaseSpec.requestSpec;
 import static specs.BaseSpec.responseSpec;
