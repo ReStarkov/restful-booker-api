@@ -2,7 +2,7 @@
 ### Веб сайт <a target="_blank" href="https://restful-booker.herokuapp.com/">restful-booker</a>
 
 <p align="center">
-<img title="Тинькофф Город" src="images/screens/cover.jpg">
+<img title="restful-booker" src="images/screens/cover.jpg">
 </p>
 
 
