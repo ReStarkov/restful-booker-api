@@ -9,7 +9,7 @@ public class CreateBodyRequestModel {
     private String lastname;
     private String additionalneeds;
     private Integer totalprice;
-    private Boolean  depositpaid;
+    private Boolean depositpaid;
     private BookingDatesModel bookingdates;
 
     public CreateBodyRequestModel() {
@@ -18,6 +18,7 @@ public class CreateBodyRequestModel {
         this.totalprice = 20;
         this.depositpaid = true;
     }
+
     public void setNullLastName() {
         this.lastname = null;
     }

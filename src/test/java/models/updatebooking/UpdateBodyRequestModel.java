@@ -11,6 +11,6 @@ public class UpdateBodyRequestModel {
     private String lastname;
     private String additionalneeds;
     private Integer totalprice;
-    private Boolean  depositpaid;
+    private Boolean depositpaid;
     private BookingDatesModel bookingdates;
 }

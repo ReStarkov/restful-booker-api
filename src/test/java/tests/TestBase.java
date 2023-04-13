@@ -1,9 +1,9 @@
 package tests;
 
 import io.qameta.allure.Step;
-import models.datesmodel.BookingDatesModel;
 import models.createbooking.CreateBodyRequestModel;
 import models.createbooking.CreateResponseModel;
+import models.datesmodel.BookingDatesModel;
 import models.updatebooking.UpdateBodyRequestModel;
 
 import static io.restassured.RestAssured.given;
